@@ -1,0 +1,12 @@
+{
+  "name": "smd",
+  "repo": "timshadel/smd"
+  "description": "Represent dates as tiny numbers, losing precision, for compact storage.",
+  "version": "0.1.0",
+  "keywords": [],
+  "scripts": ["index.js"],
+  "dependencies": {
+    "simple-debug": "*",
+    "metric-log": "*"
+  }
+}

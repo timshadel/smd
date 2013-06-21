@@ -1,0 +1,20 @@
+{
+  "name": "smd",
+  "version": "0.1.0",
+  "description": "Represent dates as tiny numbers, losing precision, for compact storage.",
+  "keywords": ["date", "remainder", "small", "compress"],
+  "author": "Tim Shadel <timshadel@gmail.com>",
+  "repository": { "type": "git", "url": "git+https://github.com/timshadel/smd.git" },
+  "dependencies": {
+    "simple-debug": "*",
+    "metric-log": "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "expect.js": "*"
+  },
+  "scripts": {
+    "test": "NODE_PATH=lib NODE_ENV=test mocha"
+  },
+  "main": "index"
+}

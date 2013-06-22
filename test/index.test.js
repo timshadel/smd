@@ -16,17 +16,17 @@ describe("SmD", function(){
     it("should be very close to Date.now()", function() {
       var now = SmD.now();
       var dtNow = Date.now();
-      var long = SmD.time(now);
+      var long = SmD.at(now);
 
       expect(now).to.be.a('number');
       expect(dtNow-long).to.be.lessThan(60 * 60 * 1000);
     });
   });
 
-  describe("#time", function(){
+  describe("#at", function(){
     it("should support negative and positive numbers", function() {
-      var early = SmD.time(-1*Math.pow(2,15));
-      var late = SmD.time(Math.pow(2,16)-1);
+      var early = SmD.at(-1*Math.pow(2,15));
+      var late = SmD.at(Math.pow(2,16)-1);
 
       // 2003-08-24T00:00:00Z
       expect(early).to.be.equal(SmD.min().getTime());
@@ -35,9 +35,9 @@ describe("SmD", function(){
     });
   });
 
-  describe("#at", function(){
+  describe("#from", function(){
     it("should support negative and positive numbers", function() {
-      var smd = SmD.at(Date.now());
+      var smd = SmD.from(Date.now());
       expect(smd).to.be.lessThan(SmD.range);
     });
   });

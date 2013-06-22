@@ -24,7 +24,7 @@ var SmD = require('smd')
 
 var d = Date.now();
 // => 1371855692507
-var s = SmD.at(d);
+var s = SmD.from(d);
 // => 53391
 
 msg.pack(d);

@@ -1,6 +1,6 @@
 {
   "name": "smd",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Represent dates as tiny numbers, losing precision, for compact storage.",
   "keywords": ["date", "remainder", "small", "compress"],
   "author": "Tim Shadel <timshadel@gmail.com>",

@@ -56,7 +56,7 @@ function SmD(ms_per_unit, range) {
  */
 
 SmD.prototype.now = function() {
-  return this.at(Date.now());
+  return this.from(Date.now());
 };
 
 /**
@@ -64,7 +64,7 @@ SmD.prototype.now = function() {
  * the number of hours since the last whole 2^16 hours since Jan 1, 1970.
  */
 
-SmD.prototype.at = function(date_ms) {
+SmD.prototype.from = function(date_ms) {
   return Math.floor((date_ms % this.range_in_ms) / this.ms_per_unit);
 };
 
@@ -88,7 +88,7 @@ SmD.prototype.max = function() {
  * Convert a super-small date back to a regular JavaScript Date object.
  */
 
-SmD.prototype.time = function(date_units) {
+SmD.prototype.at = function(date_units) {
   return date_units * this.ms_per_unit + Math.floor(Date.now()/this.range_in_ms)*this.range_in_ms;
 }
 
@@ -96,14 +96,14 @@ SmD.prototype.time = function(date_units) {
  * Convert a super-small date back to a regular JavaScript Date object.
  */
 
-SmD.prototype.date = function(at) {
-  return new Date(this.time(at));
+SmD.prototype.date = function(from) {
+  return new Date(this.at(from));
 }
 
 /**
  * Returns the distance of the super-small date from now, in seconds.
  */
 
-SmD.prototype.seconds_from_now = function(at) {
-  return Math.floor((this.time(at) - Date.now()) / MS_PER_SECOND);
+SmD.prototype.seconds_from_now = function(from) {
+  return Math.floor((this.at(from) - Date.now()) / MS_PER_SECOND);
 }
